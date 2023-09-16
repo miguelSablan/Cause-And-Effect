@@ -15,6 +15,8 @@ public class BasicMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
+    [SerializeField] private LayerMask jumpableGround;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class BasicMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
         // Allows player to jump once
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
@@ -70,5 +72,14 @@ public class BasicMovement : MonoBehaviour
         }
 
         animator.SetInteger("state", (int) state);
+    }
+
+      // checks if player is grounded. Returns true if player is standing on ground,
+    // otherwise false if not.
+    private bool isGrounded()
+    {
+        // creates a box around the player that has the same shape as the player's box collider.
+        // the box is positioned below the player's feet to check if it overlaps with the ground.
+        return Physics2D.BoxCast(collider.bounds.center, collider.bounds.size, 0f, Vector2.down, 0.1f, jumpableGround);
     }
 }
