@@ -9,6 +9,8 @@ public class BasicMovement : MonoBehaviour
     private BoxCollider2D collider;
     private SpriteRenderer sprite;
 
+    private enum MovementState { idle, running, jumping, falling }
+
     private float horizontalInput;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
@@ -35,20 +37,38 @@ public class BasicMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-        FlipSprite();
+        UpdateAnimationState();
     }
 
-    void FlipSprite()
+    void UpdateAnimationState()
     {
+        MovementState state;
+
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
         // Flip the player sprite everytime they change direction
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
-            animator.SetBool("running", true);
+            //animator.SetInteger("state", 1);
+            state = MovementState.running;
+            Debug.Log("Running");
         } else {
-            animator.SetBool("running", false);
+            //animator.SetInteger("state", 0);
+            Debug.Log("Idle");
+            state = MovementState.idle;
         }
+
+        // Trigger jump animation or falling animation depending on player's velocity
+        if (rb.velocity.y > 0.1f)
+        {
+            state = MovementState.jumping;
+        }
+        else if (rb.velocity.y < -0.1f)
+        {
+            state = MovementState.falling;
+        }
+
+        animator.SetInteger("state", (int) state);
     }
 }
