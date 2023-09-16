@@ -22,6 +22,7 @@ public class GuantletUse : MonoBehaviour
         {
             anim.SetBool("use", true);
             mybool = !PlayerTravelled;
+            anim.SetBool("use", false);
         }
     }
 }

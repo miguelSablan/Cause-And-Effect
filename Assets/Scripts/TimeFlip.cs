@@ -7,8 +7,10 @@ public class TimeFlip : MonoBehaviour
     [SerializeField] private float cooldown = 1f;
     private float nextUse = 0f;
     public bool useTimeTravel = false;
+    private bool mybool = true;
 
     //[SerializeField] private AudioSource timeFlipSF;
+
     void Update()
     {
         if (Time.time > nextUse)
