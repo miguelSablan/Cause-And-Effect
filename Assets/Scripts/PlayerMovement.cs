@@ -46,6 +46,9 @@ public class BasicMovement : MonoBehaviour
         if (playerHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
+            animator.SetBool("running", true);
+        } else {
+            animator.SetBool("running", false);
         }
     }
 }
