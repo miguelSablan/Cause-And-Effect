@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class GuantletUse : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TimeFlip PlayerTravelled;
+    private bool travelled;
+    private bool mybool = true;
+
+    private Animator anim;
+
+    private void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerTravelled == mybool)
+        {
+            anim.SetBool("use", true);
+            mybool = !PlayerTravelled;
+        }
     }
 }
