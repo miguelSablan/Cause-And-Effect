@@ -26,7 +26,6 @@ public class TimeDisplacementInteract : MonoBehaviour
         DisplaceCollision(inFuture, inPresent, travelled);
     }
 
-    // Update is called once per frame
     void Update()
     {
         travelled = PlayerTravelled.useTimeTravel;
@@ -39,7 +38,6 @@ public class TimeDisplacementInteract : MonoBehaviour
             mybool = !travelled;
         }
     }
-
     private void DisplaceCollision(bool inFuture, bool inPresent, bool travelled)
     {
         if (inFuture && !inPresent && !travelled)
