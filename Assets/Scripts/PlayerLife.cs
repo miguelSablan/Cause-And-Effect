@@ -24,7 +24,6 @@ public class PlayerLife : MonoBehaviour
             Die();
             Debug.Log("you are dead");
         }
-
     }
 
     private void Die()
