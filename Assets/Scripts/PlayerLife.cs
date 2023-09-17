@@ -21,8 +21,9 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            Die();
             Debug.Log("you are dead");
+            Die();
+           
         }
     }
 
@@ -30,12 +31,8 @@ public class PlayerLife : MonoBehaviour
     {
         //deathSoundEffect.Play();
         rb.bodyType = RigidbodyType2D.Static; // this sets player movement to static, preventing movement after death
-        anim.SetTrigger("death"); // this activates death trigger, starting the death state of the player
-        
-    }
-
-    private void RestartLevel()
-    {
+        //anim.SetTrigger("death"); // this activates death trigger, starting the death state of the player
+ 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);// this will reload the current level
     }
 }
