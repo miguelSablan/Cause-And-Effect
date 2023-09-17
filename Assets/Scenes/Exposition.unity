@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 340071671}
   - component: {fileID: 340071674}
   m_Layer: 5
-  m_Name: X button
+  m_Name: Next Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -225.91049, y: 145.25262}
-  m_SizeDelta: {x: 41.5937, y: 35.4948}
+  m_AnchoredPosition: {x: 206, y: -141}
+  m_SizeDelta: {x: 86.7776, y: 35.4948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340071671
 MonoBehaviour:
@@ -208,8 +208,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 340071674}
-        m_TargetAssemblyTypeName: BackToStartMenu, Assembly-CSharp
-        m_MethodName: BackToStart
+        m_TargetAssemblyTypeName: ToFirstLevel, Assembly-CSharp
+        m_MethodName: ToNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 340071668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dbfd9ff419a7bb4c96ce01a52074955, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bca1312ab8b9ee498aa4cbdf1c86576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &343764150
@@ -299,7 +299,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1187261147}
   - {fileID: 340071669}
   - {fileID: 1073849790}
   m_Father: {fileID: 1266887957}
@@ -417,9 +416,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'X
-
-'
+  m_Text: ->
 --- !u!222 &609764529
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -462,8 +459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: -25.396}
-  m_SizeDelta: {x: 851.48, y: 252.7032}
+  m_AnchoredPosition: {x: -0.0000038147, y: 0.000005722}
+  m_SizeDelta: {x: 956.1663, y: 468.2341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073849791
 MonoBehaviour:
@@ -487,7 +484,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1b77e03445b00b442b8f05f957290fc8, type: 3}
-    m_FontSize: 35
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -497,15 +494,12 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: '- Press ''F'' to Travel From the Present to the Future, and Vice Versa
-
-
-    -
-    Press ''Space'' to Jump
-
-
-    - Press ''R'' to restart the level'
+    m_LineSpacing: 1.3
+  m_Text: "\tIn the near future, humanity's robots have gained sentience and are
+    wreaking havoc across the present. As one desperate civilian, you go to Qualid
+    Labs for safety. There you find a guantlet that can take you to and from the
+    desolate future.\n\tTime guantlet in hand, you must use it to advance in the
+    dangerous lab in order to survive."
 --- !u!222 &1073849792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -606,85 +600,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1187261146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1187261147}
-  - component: {fileID: 1187261149}
-  - component: {fileID: 1187261148}
-  m_Layer: 5
-  m_Name: C&E Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1187261147
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187261146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 343764151}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.4454, y: 126}
-  m_SizeDelta: {x: 440.3947, y: 125.3919}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1187261148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187261146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 1b77e03445b00b442b8f05f957290fc8, type: 3}
-    m_FontSize: 50
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 56
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1.5
-  m_Text: Tutorial
---- !u!222 &1187261149
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187261146}
-  m_CullTransparentMesh: 1
 --- !u!1 &1266887953
 GameObject:
   m_ObjectHideFlags: 0
