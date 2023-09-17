@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimeDisplacementInteract : MonoBehaviour
 {
     public TimeFlip PlayerTravelled;
-    private bool travelled;
+    private bool travelled = false;
     private bool mybool;
 
     [SerializeField] private bool inPresent;
@@ -21,7 +21,7 @@ public class TimeDisplacementInteract : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         collision = GetComponent<BoxCollider2D>();
 
-        travelled = PlayerTravelled.useTimeTravel;
+        travelled = false;
         mybool = true;
         DisplaceCollision(inFuture, inPresent, travelled);
     }
@@ -29,6 +29,7 @@ public class TimeDisplacementInteract : MonoBehaviour
     void Update()
     {
         travelled = PlayerTravelled.useTimeTravel;
+        
         if (travelled == mybool)
         {
 
